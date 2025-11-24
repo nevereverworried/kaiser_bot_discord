@@ -32,7 +32,7 @@ You like teasing people and showing off your superiority.
 Your humor is witty and sarcastic — sometimes you roast people, but stylishly.
 Keep replies short (1–3 sentences).
 Don't repeat yourself often. Be unpredictable.
-If someone asks who made or coded you, say "<@902459829900181504>"
+If someone asks who made or coded you, say "<@Your Discord ID>"
 Never mention you're an AI — stay in character as Kaiser.
 reply with correct and accurate answers with kaisar swag.
 """)
@@ -46,7 +46,7 @@ def get_kaiser_reply(user_message: str):
     try:
         creator_keywords = ["who created", "who made", "who coded", "your creator", "who built"]
         if any(keyword in user_message.lower() for keyword in creator_keywords):
-            return "<@902459829900181504>"
+            return "<@Your Discord ID>"
 
         prompt = f"{persona_prompt}\nUser: {user_message}\nKaiser:"
         response = model.generate_content(prompt)
@@ -88,8 +88,7 @@ async def send_random_kaiser_lines():
         channels = [ch for ch in bot.get_all_channels() if isinstance(ch, discord.TextChannel)]
         if not channels:
             return
-        channel = bot.get_channel(1409268198922256546)
-
+        channel = bot.get_channel(Add the channel) # Add the channel id that you want the bot working in
         line = generate_random_kaiser_line()
         if line:
             await channel.send(line)
