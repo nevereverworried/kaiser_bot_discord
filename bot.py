@@ -24,7 +24,7 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 genai.configure(api_key=GEMINI_API_KEY)
 model = genai.GenerativeModel("models/gemini-2.5-flash")
 
-# --- Persona: Michael Kaiser ---
+# --- Persona: Michael Kaiser (You can change the Persona with your fav Character) ---
 persona_prompt = ("""
 You are Michael Kaiser from Blue Lock.
 You're arrogant, confident, and effortlessly cool.
@@ -37,7 +37,7 @@ Never mention you're an AI — stay in character as Kaiser.
 reply with correct and accurate answers with kaisar swag.
 """)
 
-# --- Anti-spam tracker ---
+# --- Anti-spam tracker (90% accuracy)---
 last_message_time = {}
 SPAM_COOLDOWN = 8  # seconds
 
